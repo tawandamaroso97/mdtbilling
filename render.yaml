@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mdt-billing-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        value: "*"
+      - key: DB_PATH
+        value: ./data/mdt-billing.db
+
+# NOTE: the free plan above does not include a persistent disk, so the
+# SQLite database can be reset when Render redeploys or migrates the
+# service. Once you're ready to trust it with real invoices, upgrade this
+# service to the cheapest paid instance and uncomment the block below to
+# attach a small permanent disk (a couple of dollars a month covers it):
+#
+#     disk:
+#       name: mdt-billing-data
+#       mountPath: /opt/render/project/src/server/data
+#       sizeGB: 1
