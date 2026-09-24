@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MDT Billing — Quotations & Invoicing
 
 A standalone quotation-to-cash system for Marrs Digital Technology: create quotations,
@@ -154,3 +155,6 @@ scope that out if/when you're ready to sell it that way.
 - Always set a strong, random `JWT_SECRET` in production — never use the example value.
 - Serve both frontend and backend over HTTPS (Render/Vercel/Netlify give you this for free).
 - Back up the `server/data/mdt-billing.db` file regularly if you're on a VPS.
+=======
+# mdtbilling
+>>>>>>> 6d8908dc8442c7bd72219136b6b5272097f68a82
